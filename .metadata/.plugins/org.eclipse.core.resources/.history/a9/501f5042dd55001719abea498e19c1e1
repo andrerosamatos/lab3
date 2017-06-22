@@ -1,0 +1,41 @@
+package main;
+
+public class Controle {
+	private void main() {
+
+		sc = new Scanner(System.in);
+
+	
+		Boolean sair = false;
+		
+		while (sair != true) {
+			System.out.print(menu.exibeMenu());
+			String opcao = sc.nextLine().toUpperCase();
+
+			switch (opcao) {
+			case "C":
+				cadastrar();
+
+				break;
+
+			case "L":
+				listar();
+
+				break;
+
+			case "E":
+				exibir(0);
+
+				break;
+
+			case "S":
+			 sair = true;
+			 
+			 break;
+			 
+			default:
+				System.out.println("OPÇÃO INVÁLIDA!" + "\n");
+			}
+
+	}
+}

@@ -1,0 +1,11 @@
+package main;
+
+public class Aluno {
+	
+	private String matricula;
+	private String nome;
+	private String curso;
+	
+	Aluno aluno = new Aluno();
+
+}

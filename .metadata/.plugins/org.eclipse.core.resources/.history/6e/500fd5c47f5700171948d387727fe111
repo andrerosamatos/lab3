@@ -1,0 +1,9 @@
+package main;
+
+public class Menu {
+	public String exibeMenu(){
+	return	"(C)adastrar Aluno\n" + "(E)xibir Aluno\n" + "(N)ovo Aluno\n"
+	+ "(A)locar Aluno no Grupo\n" + "(R)egistrar Resposta de Aluno" + "(I)mprimir Alunos que Responderam"
+			+ "(O)ra, vamos fechar o programa!\n\n\n" + "Opção>";
+	}
+}

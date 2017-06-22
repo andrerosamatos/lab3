@@ -1,0 +1,30 @@
+package main;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Controle {
+		
+	private ArrayList alunos = new ArrayList();
+	
+	
+	
+	
+	
+
+	public static void cadastraAluno(Object aluno) {
+		alunos.add(aluno);
+	}
+
+	public void criaGrupo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void alocaAluno() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}

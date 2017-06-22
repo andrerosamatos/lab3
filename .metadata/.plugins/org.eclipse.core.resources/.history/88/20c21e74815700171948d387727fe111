@@ -1,0 +1,42 @@
+package main;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Controle {
+	
+	private HashMap<String, Aluno> alunos = new HashMap<>();
+
+	
+
+	
+	public boolean cadastraAluno(String matricula, String nome, String curso) throws Exception {
+		Aluno aluno = new Aluno(matricula, nome, curso);
+		
+		if (!verificaCadastro(aluno)){
+			alunos.put(matricula, aluno);
+			return true;
+		}
+		return false;
+	}
+
+	public void criaGrupo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void alocaAluno() {
+		// TODO Auto-generated method stub
+		
+	}
+	public boolean verificaCadastro(Object aluno){
+		return alunos.containsValue(aluno);
+		
+	}
+
+	public String consultaAluno(String matricula) {
+		 String cadastro = alunos.get(matricula);
+	}
+	
+
+}

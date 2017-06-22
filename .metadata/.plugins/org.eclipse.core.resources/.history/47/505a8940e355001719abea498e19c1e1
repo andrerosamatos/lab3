@@ -1,0 +1,20 @@
+package main;
+
+public class Aluno {
+	
+	private String matricula;
+	private String nome;
+	private String curso;
+	
+	public Aluno(String matricula, String nome, String curso)
+		throws Exception{
+		if(matricula == null || matricula.equals("")){
+			throw new Exception ("Matricula nao pode ser null nem vazia.");
+		}
+		if(nome == null || nome.equals("")){
+			throw new Exception ("Nome nao pode ser null nem vazio.");
+		}
+	}
+		
+	
+}

@@ -1,0 +1,11 @@
+package main;
+
+public class Grupo {
+	
+	private String nome;
+
+	public Grupo(String nome) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

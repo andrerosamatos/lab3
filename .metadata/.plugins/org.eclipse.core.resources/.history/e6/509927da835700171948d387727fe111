@@ -1,0 +1,116 @@
+package main;
+
+import java.util.Scanner;
+
+public class Menu {
+	
+	
+	private static Scanner sc = new Scanner(System.in);
+	private Controle controle = new Controle();
+	private final String LN = System.lineSeparator();
+	
+	public String exibeMenu(){
+		
+		return	"(C)adastrar Aluno" + LN +
+				"(E)xibir Alno" + LN +
+				"(N)ovo Aluno" + LN +
+				"(A)locar Aluno no Grupo" + LN +
+				"(R)egistrar Resposta de Aluno" + LN +
+				"(I)mprimir Alunos que Responderam" + LN +
+				"(O)ra, vamos fechar o programa!" + LN + LN + LN +
+				"Opção>";
+	}
+
+	
+	public void processaOpcoes() throws Exception{
+
+		Boolean sair = false;
+
+		while (sair != true) {
+			System.out.print(exibeMenu());
+			String opcao = sc.nextLine().toUpperCase();
+
+			switch (opcao) {
+			case "C":
+				cadastrar();
+
+				break;
+
+			case "E":
+				consultaAluno();
+
+				break;
+				
+			case "N":
+				criarGrupo();
+
+				break;
+				
+			case "A":
+				alocarAluno();
+				
+				break;
+				
+			case "R":
+				registraResposta();
+				
+				break;
+				
+			case "I":
+				imprimirAlunos();
+
+				break;
+				
+			case "O":
+				sair = true;
+
+				break;
+
+			default:
+				System.out.println("OPÇÃO INVÁLIDA!" + "\n");
+			}
+
+		}
+	}
+
+	private void imprimirAlunos() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void registraResposta() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void alocarAluno() {
+		controle.alocaAluno();
+	}
+
+	private void criarGrupo() {
+		controle.criaGrupo();
+	}
+
+	private void consultaAluno() {
+		System.out.println("Matricula: ");
+		String matricula = sc.nextLine();
+		
+		System.out.println(controle.consultaAluno(matricula));
+	}
+
+	private void cadastrar() throws Exception {
+		System.out.println("Matricula: ");
+		String matricula = sc.nextLine();
+		System.out.println("Nome: ");
+		String nome = sc.nextLine();
+		System.out.println("Curso: ");
+		String curso = sc.nextLine();
+		if(controle.cadastraAluno(matricula, nome, curso)){
+			System.out.println("CADASTRO REALIZADO!");	
+		}else{System.out.println("MATRICULA JA CADASTRADA!");
+			
+		}
+		
+	}
+	}
+

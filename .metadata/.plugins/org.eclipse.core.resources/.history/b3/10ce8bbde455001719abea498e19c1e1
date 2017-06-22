@@ -1,0 +1,41 @@
+package main;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Controle {
+		
+	private ArrayList alunos = new ArrayList();
+	private boolean alunoExiste;
+
+	
+	
+	
+	
+	
+
+	public void cadastraAluno(Object aluno) {
+		if (!verificaCadastro(aluno)){
+			boolean alunoExiste = false;
+			alunos.add(aluno);
+		}else{
+			alunoExiste = true;
+		}
+	}
+
+	public void criaGrupo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void alocaAluno() {
+		// TODO Auto-generated method stub
+		
+	}
+	public boolean verificaCadastro(Object aluno){
+		return alunos.contains(aluno);
+		
+	}
+	
+
+}

@@ -1,0 +1,13 @@
+package main;
+
+import java.util.Scanner;
+
+public class Controle {
+
+	public static void cadastraAluno() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}

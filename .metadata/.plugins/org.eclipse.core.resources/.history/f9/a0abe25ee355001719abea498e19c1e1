@@ -1,0 +1,98 @@
+package main;
+
+import java.util.Scanner;
+
+public class Main {
+	
+	private static Menu menu = new Menu();
+	private static Scanner sc = null;
+	private Controle controle = new Controle();
+	public static void main(String[] args) throws Exception {
+
+		Scanner sc = new Scanner(System.in);
+
+		Boolean sair = false;
+
+		while (sair != true) {
+			System.out.print(menu.exibeMenu());
+			String opcao = sc.nextLine().toUpperCase();
+
+			switch (opcao) {
+			case "C":
+				cadastrar();
+
+				break;
+
+			case "E":
+				exibir(0);
+
+				break;
+				
+			case "N":
+				criarGrupo();
+
+				break;
+				
+			case "A":
+				alocarAluno();
+				
+				break;
+				
+			case "R":
+				registraResposta();
+				
+				break;
+				
+			case "I":
+				imprimirAlunos();
+
+				break;
+				
+			case "O":
+				sair = true;
+
+				break;
+
+			default:
+				System.out.println("OPÇÃO INVÁLIDA!" + "\n");
+			}
+
+		}
+	}
+
+	private void imprimirAlunos() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void registraResposta() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void alocarAluno() {
+		controle.alocaAluno();
+	}
+
+	private void criarGrupo() {
+		controle.criaGrupo();
+	}
+
+	private void exibir(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void cadastrar() throws Exception {
+		System.out.println("Matricula: ");
+		String matricula = sc.nextLine();
+		System.out.println("Nome: ");
+		String nome = sc.nextLine();
+		System.out.println("Curso: ");
+		String curso = sc.nextLine();
+		Aluno aluno = new Aluno(matricula, nome, curso);
+		controle.cadastraAluno(aluno);
+		System.out.println("CADASTRO REALIZADO!");
+			
+	}
+}

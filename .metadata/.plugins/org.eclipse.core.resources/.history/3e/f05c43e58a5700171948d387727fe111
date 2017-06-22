@@ -1,0 +1,17 @@
+package main;
+
+public class Grupo {
+	
+	private String nome;
+
+	public Grupo(String nome) throws Exception{
+		if(nome == null || nome.equals("")){
+			throw new Exception ("Nome do grupo nao pode ser null nem vazio.");
+		}
+		this.nome = nome;
+	
+		
+	}
+	
+
+}

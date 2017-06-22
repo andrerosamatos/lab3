@@ -1,0 +1,15 @@
+package main;
+
+public class Aluno {
+	
+	private String matricula;
+	private String nome;
+	private String curso;
+	
+	public Aluno(String matricula, String nome, String curso)
+		throw Exception{
+		
+	}
+		
+	
+}
