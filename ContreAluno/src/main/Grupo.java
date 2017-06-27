@@ -14,9 +14,8 @@ public class Grupo {
 		this.nome = nome;
 	
 	}
-	public static void alocaAlunos() {
-		// TODO Auto-generated method stub
-		
+	public static void alocaAlunos(String grupo, String matricula) {
+	//	grupo.add()
 	}
 	
 

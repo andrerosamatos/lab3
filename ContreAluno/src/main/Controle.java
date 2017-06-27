@@ -1,6 +1,7 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -13,7 +14,7 @@ public class Controle {
 			throws Exception {
 		Aluno aluno = new Aluno(matricula, nome, curso);
 
-		if (!verificaCadastro(aluno)) {
+		if (verificaCadastro(matricula)) {
 			alunos.put(matricula, aluno);
 			return true;
 		}
@@ -30,30 +31,45 @@ public class Controle {
 		return false;
 	}
 
-	public void alocaAluno(String grupo, String matricula) {
-		if (grupos.containsValue(grupo)){
-			if(alunos.containsKey(matricula)){
-				Grupo.alocaAlunos();
-		}else{System.out.println("");
-			
+	public String alocaAluno(String grupo, String matricula) {
+		if (verificaCadastro(matricula)) {
+			if (grupos.containsValue(grupo)) {
+				Grupo.alocaAlunos(grupo, matricula);
+			} else {
+				return "Grupo nao criado.";
+			}
 		}
+		return "Aluno nao cadastrado.";
 	}
 
-	private boolean verificaCadastro(Object aluno) {
-		return alunos.containsValue(aluno);
-
+	private boolean verificaCadastro(String matricula) {
+		if (!alunos.containsKey(matricula)){
+			return true;
+		}
+		return false;
 	}
+	
 
 	public String consultaAluno(String matricula) {
 		Aluno cadastro = alunos.get(matricula);
-		if (cadastro != null) {
+		if (alunos.containsKey(matricula)) {
 			return cadastro.toString();
 		}
 		return "Aluno não cadastrado.";
 	}
 	
 	private boolean verificaGrupo(Object grupo) {
-		return grupos.containsValue(grupo);
+		if (grupos.containsValue(grupo)){
+		return true;
+		}
+		return false;
+	}
+
+	public void imprimirGrupo(String grupo) {
+		if(verificaGrupo(grupo)){
+			grupos.get(grupo).toString();
+			
+		}
 	}
 
 }

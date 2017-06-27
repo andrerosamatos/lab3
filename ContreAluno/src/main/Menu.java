@@ -81,11 +81,18 @@ public class Menu {
 	private void alocarAluno() {
 		System.out.println("(A)locar Aluno ou (I)mprimir Grupo? ");
 		String opcao = sc.nextLine();
-		System.out.println("Matricula: ");
-		String matricula = sc.nextLine();
-		System.out.println("Grupo: ");
-		String grupo = sc.nextLine();
-		controle.alocaAluno(grupo, matricula);
+		if(opcao.equalsIgnoreCase("A")){
+			System.out.println("Matricula: ");
+			String matricula = sc.nextLine();
+			System.out.println("Grupo: ");
+			String grupo = sc.nextLine();
+			controle.alocaAluno(grupo, matricula);
+		}else{
+			System.out.println("Grupo: ");
+			String grupo = sc.nextLine();
+			controle.imprimirGrupo(grupo);
+		}
+
 	}
 
 	private void criarGrupo() throws Exception {
